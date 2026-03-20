@@ -3,7 +3,15 @@
 The **AI SaaS Platform**, a fully functional subscription-based web application built using the **PERN stack** (PostgreSQL, Express.js, React, Node.js). This app offers various AI-powered tools integrated with secure user authentication and premium feature billing.
 
 ---
+## 🌐 Live Demo
 
+🚀 **Frontend:**  
+👉 https://ai-saas-platform-client-sepia.vercel.app/  
+
+⚙️ **Backend API:**  
+👉 https://ai-saas-platform-server-khaki.vercel.app/
+
+---
 ## 🚀 Features
 
 ### 🔐 User Authentication
