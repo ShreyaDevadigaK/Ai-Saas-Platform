@@ -6,10 +6,10 @@ The **AI SaaS Platform**, a fully functional subscription-based web application 
 ## 🌐 Live Demo
 
 🚀 **Frontend:**  
-👉 https://ai-saas-platform-client-sepia.vercel.app/  
+👉 https://ai-saas-platform-client-one.vercel.app/
 
 ⚙️ **Backend API:**  
-👉 https://ai-saas-platform-server-khaki.vercel.app/
+👉 https://ai-saas-platform-server-psi.vercel.app/
 
 ---
 ## 🚀 Features
