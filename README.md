@@ -21,40 +21,6 @@ The **AI SaaS Platform**, a fully functional subscription-based web application 
 
 ---
 
-## 🤖 AI Tools
-
-### 📄 Article Generator
-Generate articles using AI:
-- Input: Title & Desired Length  
-- Output: Full article content
-
-### 📝 Blog Title Generator
-Generate catchy blog titles:
-- Input: Keyword & Category  
-- Output: AI-generated titles
-
-### 🖼️ Image Generator
-Create images with prompts:
-- Input: Text Prompt  
-- Output: AI-generated images
-
-### 🧽 Background Remover
-Remove backgrounds from images:
-- Input: Upload Image  
-- Output: Transparent background image
-
-### 🧼 Image Object Remover
-Remove specific objects from images:
-- Input: Upload Image + Object Description  
-- Output: Image with object removed
-
-### 📊 Resume Analyzer
-Analyze your resume using AI:
-- Input: Upload Resume (PDF/DOCX)  
-- Output: Detailed analysis report
-
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend:** React.js  
@@ -62,5 +28,94 @@ Analyze your resume using AI:
 - **Database:** PostgreSQL (via Neon)  
 - **Auth:** Clerk  
 - **Deployment:** Vercel / Railway / Render *(optional)*  
-- **AI Services:** OpenAI, Replicate, or custom models
+- **AI Services:** Google Gemini, ClipDrop, Cloudinary
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally.
+
+### 📋 Prerequisites
+
+- **Node.js** (v18 or higher)
+- **PostgreSQL** (or a [Neon](https://neon.tech) account)
+- **Clerk** account (for authentication)
+- **Cloudinary** account (for image hosting)
+- **Google Gemini API Key** (for text generation)
+- **ClipDrop API Key** (for image generation)
+
+### 🔧 Installation & Setup
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/ShreyaDevadigaK/Ai-Saas-Platform.git
+cd Ai-Saas-Platform
+```
+
+#### 2. Server Setup
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file in the `server` directory and add the following:
+```env
+DATABASE_URL=your_postgresql_connection_string
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+GEMINI_API_KEY=your_gemini_api_key
+CLIPDROP_API_KEY=your_clipdrop_api_key
+CLIENT_URL=http://localhost:5173
+PORT=3000
+```
+
+#### 3. Client Setup
+```bash
+cd ../client
+npm install
+```
+
+Create a `.env` file in the `client` directory and add:
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+```
+
+### 🏃 Running the Project
+
+#### Start the Server
+In the `server` directory:
+```bash
+npm run server
+```
+
+#### Start the Client
+In the `client` directory:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+---
+
+## 🗃️ Database Schema
+
+The application uses a `creations` table to store AI-generated content. You can use the following SQL to create it:
+
+```sql
+CREATE TABLE creations (
+  id SERIAL PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  prompt TEXT NOT NULL,
+  content TEXT NOT NULL,
+  type TEXT NOT NULL,
+  publish BOOLEAN DEFAULT FALSE,
+  likes TEXT[] DEFAULT '{}',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
 
